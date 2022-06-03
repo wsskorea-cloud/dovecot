@@ -1,0 +1,9 @@
+hosts = ldap.wsskorea.cloud
+dn = cn=admin,dc=wsskorea,dc=cloud
+dnpass = admin12345!@
+base = dc=wsskorea,dc=cloud
+ldap_version = 3
+default_pass_scheme = plain
+auth_bind = yes
+
+pass_filter = (mail=%u)
