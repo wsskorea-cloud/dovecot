@@ -1,9 +1,15 @@
-hosts = ldap.wsskorea.cloud
+uris = ldap://ldap.wsskorea.cloud
 dn = cn=admin,dc=wsskorea,dc=cloud
 dnpass = admin12345!@
 base = dc=wsskorea,dc=cloud
 ldap_version = 3
 default_pass_scheme = plain
-auth_bind = yes
 
-pass_filter = (mail=%u)
+auth_bind = no
+auth_bind_userdn = uid=%n,dc=wsskorea,dc=cloud
+
+pass_attrs = mail=%{ldap:mailRoutingAddress},userPassword=%{ldap:userPassword}
+pass_filter = (&(objectClass=inetOrgPerson)(cn=%n))
+
+user_attrs = homeDirectory=home,uidNumber=uid,gidNumber=gid
+user_filter = (&(objectClass=inetOrgPerson)(cn=%n))
