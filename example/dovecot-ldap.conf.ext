@@ -1,12 +1,13 @@
-uris = LDAP_URIS
-dn = LDAP_DN
-dnpass = LDAP_PASSWORD
-base = LDAP_BASE
+uris = ldap://ldap.wsskorea.cloud
+dn = cn=admin,dc=wsskorea,dc=cloud
+dnpass = admin12345!@
+base = dc=wsskorea,dc=cloud
 ldap_version = 3
+# default_pass_scheme = plain
 default_pass_scheme = SHA512-CRYPT
 
 auth_bind = no
-auth_bind_userdn = uid=%n,LDAP_BASE
+auth_bind_userdn = uid=%n,dc=wsskorea,dc=cloud
 
 pass_attrs = cn=user,userPassword=password
 pass_filter = (&(objectClass=inetOrgPerson)(cn=%n))
