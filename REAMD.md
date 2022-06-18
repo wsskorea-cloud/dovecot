@@ -24,7 +24,7 @@ docker run -itd \
     -p 143:143 \
     -e LDAP_URIS="ldap://ldap.wsskorea.cloud" \
     -e LDAP_DN="cn=admin,dc=wsskorea,dc=cloud" \
-    -e LDAP_PASS="admin12345!@" \
+    -e LDAP_PASSWORD="admin12345!@" \
     -e LDAP_BASE="dc=wsskorea,dc=cloud" \
     --name dovecot-ldap \
     dovecot-ldap:latest
@@ -39,7 +39,7 @@ docker run -itd \
     -p 995:995 \
     -e LDAP_URIS="ldap://ldap.wsskorea.cloud" \
     -e LDAP_DN="cn=admin,dc=wsskorea,dc=cloud" \
-    -e LDAP_PASS="admin12345!@" \
+    -e LDAP_PASSWORD="admin12345!@" \
     -e LDAP_BASE="dc=wsskorea,dc=cloud" \
     -e TLS="yes" \
     -e TLS_CERT="/tls/cert.pem" \
